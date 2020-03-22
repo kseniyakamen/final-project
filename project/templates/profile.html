@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, {{ name }}!
+  <p> </p>
+  Please type the keyword to initate the search engine.
+</h1>
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Search Engine</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/profile">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="keyword" name="keyword" placeholder="keyword" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Search</button>
+            <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox"name="check" id="GFG" value="1" checked>
+                    Partial match
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+pip
+flask
+flask-login
+flask_sqlalchemy
+flask_httpauth
+requests
+requests-cache 
+pandas
+werkzeug
+docx
+python-docx
+nltk
+sklearn
+pysqlite3
